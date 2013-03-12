@@ -11,22 +11,40 @@
 
 /* overall
 -------------------------------------------------------------- */
+@font-face {
+    font-family: 'Entypo';
+    src: url('../fonts/entypo.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/entypo.woff') format('woff'), 
+         url('../fonts/entypo.ttf')  format('truetype'),
+         url('../fonts/entypo.svg#svgEntypo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 * {
     margin: 0;
     padding: 0;
-}
+    box-sizing: border-box;
+}   
+
 html * { font-size: 100.01% }
+
 body {
     font-family: "Trebuchet MS", sans-serif;
     font-size: 75.00%; 
     color: #444;
-    background: url("../images/screen_bg.png") repeat-x top left fixed #EEEEEE;
-    padding: 10px 0;
+    background: #cccccc;
 }
+
 ul, ol, dl { line-height: 1.5em; margin: 0 0 1em 1em }
+
 li { margin-left: 1.5em; line-height: 1.5em }
+
 dt { font-weight: bold }
+
 dd { margin: 0 0 1em 2em }
+
 a {
     color: #4D87C7;
     text-decoration:none;
@@ -82,14 +100,6 @@ acronym, abbr {
 header, #nav, #main, footer {
     clear: both;
 }
-#page {
-    min-width: 980px;
-    max-width: 80%;
-    background: #fff;
-    text-align:left;
-    margin: 0 auto;
-    padding: 10px;
-}
 .skip, .hideme, .print {
     height: 1px;
     left: -1000em;
@@ -100,11 +110,17 @@ header, #nav, #main, footer {
 
 /* header
 -------------------------------------------------------------- */
+.header-wrap {
+    width: 100%;
+    margin: 0 auto;
+    background: white;
+}
 header {
+    margin: 0 auto;
+    width: 90%;
     position: relative;
     color: #faf0e6;
-    padding: 15px 2em 5px 20px;
-    background: url("../images/header_bg.png") repeat-x top left #9a9a9a;
+    padding: 10px 2em 5px 20px;
 }
 header h1 {
     font-size:2.5em;
@@ -116,6 +132,10 @@ header span {
     color: #333333;
 }
 
+header span.sub-line {
+    display: none;
+}
+
 /* header/topsubnav
 -------------------------------------------------------------- */
 #topsubnav {
@@ -125,7 +145,7 @@ header span {
     text-align: right;
 }
 #topsubnav a { 
-    color: #f0f8ff;
+    color: black;
     font-weight: normal;
     background:transparent;
     text-decoration:none;
@@ -139,11 +159,18 @@ header span {
 
 /* nav
 -------------------------------------------------------------- */
+#topNav {
+    margin: 0 auto;
+    clear: both;
+    background: url("../images/menu-bg.gif") repeat-x 0 0;
+    width: 100%;
+    font-size: 0;
+}
+
 #topNav ul {
+    margin: 0 auto;
     list-style: none;
-    padding: 0 0 0 20px;
-    margin: 0;
-    background: #9a9a9a
+    width: 90%;
 }
 
 #topNav ul li {
@@ -152,14 +179,13 @@ header span {
 }
 
 #topNav a {
-    background: url("../icons/x32_sprite.png") no-repeat #D3D3D3;
-    color:black;
+    color:white;
     display:inline-block;
-    height:20px;
-    padding-top:37px;
+    height: 25px;
+    font-size: 16px;
+    padding: 20px 10px 20px 10px;
     text-align:center;
     text-decoration:none;
-    min-width:78px;
 }
 
 #topNav a:hover {
@@ -168,44 +194,52 @@ header span {
 }
 
 #topNav #topNav_current a {
-    font-weight: bold;
     color: black;
     background-color: #ffffff;
 }
-.topnav-tools { background-position: 22px -10px !important; }
-.topnav-admin { background-position: 22px -74px !important; }
-.topnav-sites { background-position: 22px -523px !important; }
-.topnav-monitor { background-position: 22px -585px !important; }
-.topnav- { background-position: 22px -650px !important; }
-.topnav-help { background-position: 22px -715px !important; }
-.topnav-mail { background-position: 22px -780px !important; }
-.topnav-mailuser { background-position: 22px -780px !important; }
-.topnav-vm { background-position: 22px -842px !important; }
-.topnav-domain { background-position: 22px -905px !important; }
-.topnav-dns { background-position: 22px -970px !important; }
-.topnav-dashboard { background-position: 22px -1035px !important; }
-.topnav-client { background-position: 22px -1098px !important; }
-.topnav-billing { background-position: 22px -1162px !important; }
+
+.topnav-:before { font-family: "Entypo"; content: '🔑'; }
+.topnav-tools:before { font-family: "Entypo"; content: '\2692'; }
+.topnav-admin:before { font-family: "Entypo"; content: '\e74e'; }
+.topnav-sites:before { font-family: "Entypo"; content: '📁'; }
+.topnav-monitor:before { font-family: "Entypo"; content: '📊'; }
+.topnav-help:before { font-family: "Entypo"; content: '\e788'; }
+.topnav-mail:before { font-family: "Entypo"; content: '\2709'; }
+.topnav-mailuser:before { font-family: "Entypo"; content: '\2709'; }
+.topnav-vm:before { font-family: "Entypo"; content: '\e738'; }
+.topnav-domain:before { font-family: "Entypo"; content: '🌎'; }
+.topnav-dns:before { font-family: "Entypo"; content: '\e723'; }
+.topnav-dashboard:before { font-family: "Entypo"; content: '\2302'; }
+.topnav-client:before { font-family: "Entypo"; content: '👥'; }
+.topnav-billing:before { font-family: "Entypo"; content: '💳'; }
 #topNav a span {
-            padding: 0 3px;
+            padding: 0 0 0 5px;
         }
 /* main
 -------------------------------------------------------------- */
 #main { 
     background: #fff;
+    margin: 0 auto;
     padding: 1em 0;
+    width: 90%;
+    min-height: 800px;
+    height: 100%;
+    overflow: hidden;
+}
+
+div.buttons {
+    padding-bottom: 10px;
 }
 
 /* main/sideNav + submenu
 -------------------------------------------------------------- */
 #sideNav { 
-    width: 200px; 
+    width: 20%; 
     float:left;
     padding: 0 10px 0 0; 
 }
 
 #submenu {
-    width: 100%;
     overflow: hidden;
     margin: 0px;
     list-style-type: none;
@@ -228,7 +262,6 @@ header span {
 #submenu a,
 #submenu strong {
     display:block;
-    width: 90%;
     padding: 2px 0px 2px 10%;
     text-decoration: none;
     background-color:#fff;
@@ -238,7 +271,6 @@ header span {
 
 /* Menu Title */
 #submenu li.title {
-    width: 100%;
     padding: 0px;
     font-weight: bold;
     color: #444;
@@ -275,7 +307,6 @@ header span {
 }
 
 #submenu li a {
-    width: 90%;
     padding-left: 10%;
     background-color:#fff;
     color: #444;
@@ -296,21 +327,33 @@ header span {
 
 /* main/content
 -------------------------------------------------------------- */
+.page {
+    clear: both;
+    height: 100%;    
+    background: url("../images/shadow-bg.gif") repeat-x 0 bottom #e3e7ed;
+}
+
 #content { 
-    margin-left: 200px; 
-    margin-right: 0;
-    padding: 0px 10px 10px 20px;
+    width: 74%;
+    padding: 0px 10px 10px 10px;
     border-left: 1px #ddd solid;
+    float: left;
 }
 
 /* footer
 -------------------------------------------------------------- */
 
-footer { 
-    color:#666; 
-    background: #f9f9f9;
+.footer-wrap {
+    width: 100%;
+    margin: 0 auto;
+    background: url("../images/footer-bg-bot.gif") repeat-x 0 0 #252d39;
     padding: 10px 20px;
-    border-top: 5px #efefef solid;
+}
+
+footer { 
+    margin: 0 auto;
+    width: 90%;
+    color: white;    
     font-size: 0.8em;
     text-align: center;
 }
@@ -355,7 +398,7 @@ td {
     text-align:left;
 }
 thead th {
-    background: #444 url("../images/lists_thead_bg.png") repeat-x;
+    background: #444 url("../images/menu-bg.gif") repeat-x 0 0;
     color: #fff;
 }
 tbody th {
@@ -421,6 +464,7 @@ table.list .tbl_col_limit {
 .pnl_toolsarea fieldset legend , .pnl_listarea fieldset legend {
     font-weight: bold;
     color: #6299c5;
+    display: none;
 }
 .pnl_formarea fieldset {
     font-weight: bold;
@@ -430,8 +474,8 @@ table.list .tbl_col_limit {
 #tabbox_content * .pnl_toolsarea fieldset legend, #tabbox_content * .pnl_listarea fieldset legend, #tabbox_content * .pnl_formsarea fieldset legend { display: none !important; }
 .codeview {
     margin:20px 0;
-    padding:2px;
-    border: 1px solid #ffcc00;
+    padding: 5px;
+    border: 4px solid #ffcc00;
     background: #fffaea;
     font-family: Consolas, "Lucida Console", "Courier New", monospace;
     font-size: 0.9em;
@@ -444,11 +488,12 @@ table.list {
 table.list thead th { font-size: 10px; }
 table.list tbody { border: 1px solid #d3d3d3 !important; }
 table.list tfoot td { text-align: center;  background: #f8f8f8 url("../images/lists_tfoot_bg.png") repeat-x bottom left;  padding: 24px 8px 8px 8px; }
+table.list .tbl_paging img { vertical-align: top; }
 table.list .tbl_row_even { background: #fcfcfc; }
 table.list .tbl_row_uneven { background: #f0f8ff; }
 table.list tr:hover { background: #fffacd; }
 table.list td { word-wrap:break-word;white-space:pre-wrap; }
-table.list td.tbl_col_buttons { word-wrap:normal;white-space:normal; }
+table.list td.tbl_col_buttons { word-wrap:normal;white-space:normal;overflow:visible; }
 
 /* Password Strength */
 #passBar {
@@ -470,44 +515,52 @@ table.list td.tbl_col_buttons { word-wrap:normal;white-space:normal; }
     font-family: Consolas, "Lucida Console", "Courier New", monospace;
     font-size: 0.9em;
     float: left;
-    width: 100%;
 }
 .systemmonitor-server:hover,
 .systemmonitor-vm:hover { background-color: #FFFACD; }
 .state-no_state,
 .state-no_state-ve {
-    border-top: 4px solid #95A19F;
+    border: 4px solid #95A19F;
     background-color: #f8f8ff;
+    padding: 5px;
 }
 .state-unknown,
 .state-unknown-ve {
-    border-top: 4px solid #30302e;
+    border: 4px solid #30302e;
     background-color: #cecfc5;
+    padding: 5px;
 }
 .state-ok,
 .state-ok-ve {
-    border-top: 4px solid #23fb00;
+    border: 4px solid #23fb00;
     background-color: #adffa2;
+    padding: 5px;
+    width: 100%;
+    overflow: hidden;
 }
 .state-info,
 .state-info-ve {
-    border-top: 4px solid #183e99;
+    border: 4px solid #183e99;
     background-color: #d4e2ff;
+    padding: 5px;
 }
 .state-warning,
 .state-warning-ve {
-    border-top: 4px solid #ffa800;
+    border: 4px solid #ffa800;
     background-color: #ffda93;
+    padding: 5px;
 }
 .state-critical,
 .state-critical-ve {
-    border-top: 4px solid #ff0000;
+    border: 4px solid #ff0000;
     background-color: #ffb9b9;
+    padding: 5px;
 }
 .state-error,
 .state-error-ve {
-    border-top: 4px solid #ff0000;
+    border: 4px solid #ff0000;
     background-color: #ff7f7f;
+    padding: 5px;
 }       
 div.icoDevice {
     float: left;
@@ -552,24 +605,6 @@ div.status {
 .state-critical .status,
 .state-critical-ve .status { background-position: 0 -463px; }
 
-/* Usage unknown  
-.systemmonitor-content table {
-    border: none;
-    margin-top: 10px;
-}
-
-.systemmonitor-content * .online {
-    border: 1px solid #ffffff;
-    background-color: #E3FFB8;
-    color: #000000;
-    padding:0px 5px;
-}
-.systemmonitor-content * .offline {
-    border: 1px solid #ffffff;
-    background-color: #d12f19; 
-    color:#ffffff;
-    padding:0px 5px;
-}*/
 
 /* Dashboard */
 .dashboard-modules {
@@ -585,8 +620,7 @@ div.status {
 }
 .dashboard-modules a, 
 .dashboard-modules a:hover {
-    background: url("../icons/x32_sprite.png") no-repeat transparent;
-    color:Black;
+    color: black;
     display:block;
     font-weight:bold;
     height:30px;
@@ -594,40 +628,51 @@ div.status {
     width:60px;
     text-decoration: none;
 }
-.dashboard-modules.tools a { background-position: 12px -9px; }
-.dashboard-modules.admin a { background-position: 12px -73px; }
-.dashboard-modules.sites a { background-position: 12px -520px; }
-.dashboard-modules.monitor a { background-position: 13px -585px; }
-.dashboard-modules.help a { background-position: 13px -716px; }
-.dashboard-modules.mail a { background-position: 12px -776px; }
-.dashboard-modules.vm a { background-position: 14px -842px; }
-.dashboard-modules.domain a { background-position: 12px -905px; }
-.dashboard-modules.dns a { background-position: 12px -970px; }
-.dashboard-modules.client a { background-position: 13px -1096px; }
-.dashboard-modules.billing a { background-position: 14px -1162px; }
+.dashboard-modules > :before {
+    font-family: "Entypo";
+    font-size: 26px;
+    display: block;
+    margin-top: -35px;
+}
+.dashboard-modules.tools a:before { content: '\2692'; }
+.dashboard-modules.admin a:before { content: '\e74e'; }
+.dashboard-modules.sites a:before { content: '📁'; }
+.dashboard-modules.monitor a:before { content: '📊'; }
+.dashboard-modules.help a:before { content: '\e788'; }
+.dashboard-modules.mail a:before { content: '\2709'; }
+.dashboard-modules.vm a:before { content: '\e738'; }
+.dashboard-modules.domain a:before { content: '🌎'; }
+.dashboard-modules.dns a:before { content: '\e723'; }
+.dashboard-modules.client a:before { content: '👥'; }
+.dashboard-modules.billing a:before { content: '💳'; }
 
 .panel_dashboard h2 { font-size:20px; }
+
 
 /* Image-Replacement */
 .swap { background-repeat:no-repeat; }
 .swap span { display:none; height:16px; } 
 #ir-HeaderLogo {
     background-image: url("../images/header_logo.png");
-    height:32px;
-    margin:0 0 0.2em;
+    width: 200px;
+    height: 80px;
+    margin: 0 0 0.2em;
 } 
 div#ir-Yes,
-div#ir-No {
+div#ir-No:before {
+    font-family: Entypo;
     text-align: center;
-    background: url("../icons/x16_sprite.png") no-repeat transparent;
+
 }
-#ir-Yes {
-    background-position: center -342px !important;
+#ir-Yes:before {
     height: 16px;
+    content: "✓ ";
+    color: green;
 }
-#ir-No {
-    background-position: center -362px !important;
+#ir-No:before {
     height: 16px;
+    content: "✕ ";
+    color: red;
 }
 .swap {
     background-repeat: no-repeat;
@@ -729,39 +774,56 @@ button.negative:hover {
 }
 
 /* Button with icon and text */
-.iconstxt { background: url("../icons/button_sprite.png") no-repeat transparent; }
-.iconstxt span { padding-left: 20px; font-weight: bold; }
-.iconstxt.icoPositive { background-position: 6px -130px; }
-.iconstxt.icoNegative { background-position: 6px -98px; }
-.iconstxt.icoAdd { background-position: 6px -66px; }
-.iconstxt.icoKey { background-position: 6px -1px; }
-.iconstxt.icoDelete { background-position: 6px -34px; }
-.iconstxt.icoDownload { background-position: 6px -1px; }
-.iconstxt.icoRestore { background-position: 6px -1px; }
+.iconstxt span { padding-left: 15px; font-weight: bold; }
+.iconstxt.icoPositive:before { font-family: Entypo; content: '\2713'; }
+.iconstxt.icoNegative:before { font-family: Entypo; content: '\2716' }
+.iconstxt.icoAdd:before { font-family: Entypo; content: '\2795'; }
+.iconstxt.icoKey:before { font-family: Entypo; content: '🔑'; }
+.iconstxt.icoDelete:before { font-family: Entypo; content: '\2796'; }
+.iconstxt.icoDownload:before { font-family: Entypo; content: '📥'; }
+.iconstxt.icoRestore:before { font-family: Entypo; content: '📤'; }
 
 /* Button with icon and without text */
-.icons16 span { display: none; }
+.icons16 { position: relative; }
+.icons16>span {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 1s linear;
+    -moz-transition: opacity 1s linear;
+    -o-transition: opacity 1s linear;
+    -ms-transition: opacity 1s linear;
+    transition: opacity 1s linear;
+    position: absolute;
+    right: 20px;
+    padding: 1px 2px;
+    border: 1px solid rgb(155,155,11);
+    background: rgb(255,255,111);
+    white-space: nowrap;
+}
+.icons16:hover>span {
+    opacity: 1.0;
+    visibility: visible;
+}
 a.icons16 {
     height: 18px;
     width: 18px;
-    padding: 0;
-    background: url("../icons/x16_sprite.png") no-repeat transparent;
 }
 button.icons16 {
+    position: relative;
     height: 20px;
     width: 20px;
-    padding: 0;
-    background: url("../icons/x16_sprite.png") no-repeat transparent;
 }
-.icons16.icoEdit { background-position: -1px -1px; }
-.icons16.icoLoginAs { background-position: -1px -21px; }
-.icons16.icoPDF { background-position: -1px -61px; }
-.icons16.icoDelete { background-position: -1px -81px; }
-.icons16.icoWebmailer { background-position: -1px -101px; }
-.icons16.icoFilter { background-position: -1px -161px; }
-.icons16.icoDbAdmin { background-position: -1px -221px; }
-.icons16.icoAction { background-position: -1px -241px; }
-.icons16.icoLink { background-position: -1px -442px; float: right; }
+
+.icons16.icoEdit:before { font-family: Entypo; content: '\270e'; position: absolute; left: 3px;}
+.icons16.icoLoginAs:before { font-family: Entypo; content: '\27a6'; position: absolute; left: 3px;}
+.icons16.icoPDF:before { font-family: Entypo; content: '\e736'; position: absolute; left: 3px;}
+.icons16.icoDelete:before { font-family: Entypo; content: '\2796'; color:  red; position: absolute; left: 3px;}
+.icons16.icoWebmailer:before { font-family: Entypo; content: '\2709'; position: absolute; left: 3px;}
+.icons16.icoFilter:before { font-family: Entypo; content: '\e728'; position: absolute; left: 3px; top: 3px;}
+.icons16.icoDbAdmin:before { font-family: Entypo; content: '\e754'; position: absolute; left: 3px;}
+.icons16.icoAction:before { font-family: Entypo; content: '\26a1'; position: absolute; left: 3px;}
+.icoLink { position: absolute; right: 150px; }
+.icons16.icoLink:before { font-family: Entypo; content: '🔗'; position: absolute; left: 3px;}
 
 div.group-icon {
     float: left;
@@ -823,9 +885,12 @@ input#refresh, input#retry, input#expire, input#minimum, input#ttl { width: 50px
 
 /* --- */
 
-a[href $="#logout"] {
+a[href $="#logout"]:after {
+    font-family: Entypo;
+    padding-left: 5px;
     padding-right: 20px;
-    background: url("../icons/x16_sprite.png") no-repeat right -143px transparent !important;
+    content: '\e741';
+    color: black;
 }
 
 /* Select Menu with Images */
@@ -1099,8 +1164,7 @@ select.flags option[value=ZM], select.flags option[value=zm], .country-ZM {backg
 select.flags option[value=ZW], select.flags option[value=zw], .country-ZW {background-position:0 -5435px}
 
 .panel_login {
-    max-width: 80%;
-    min-width: 680px;
+    width: 85%;
 }
 div.subsectiontoggle {
     border:1px solid #ccc;
@@ -1661,7 +1725,6 @@ p.value {
 
 .uniForm .buttonHolder{ 
     text-align: left; 
-    background: #CEDEEF url("../images/buttonHolder_bg.gif") no-repeat right;
     margin: 3em 0 1em;
     padding: 8px;
 }
@@ -1782,7 +1845,7 @@ p.value {
 }
 .ui-widget { font-family: "Trebuchet MS", Arial, sans-serif; font-size: 100%; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: "Trebuchet MS", Arial, sans-serif; font-size: 100%; }
-ul.ui-autocomplete { max-height: 250px; overflow-y: auto; min-width: 65px;}
+ul.ui-autocomplete { max-height: 250px; overflow-y: auto; min-width: 85px;}
 .ui-combobox { position: relative; display: inline-block; margin-right: 17px; }
 .ui-combobox-toggle { position: absolute !important; top: 0; bottom: 0; margin-left: -1px; padding: 1px !important; background: none repeat scroll 0 0 #FFFFFF !important; border: 1px solid #DFDFDF !important;}
 .ui-combobox-input { background: none repeat scroll 0 0 #FFFFFF !important; border: 1px solid #DFDFDF !important; padding: 1px; font-weight: normal !important; }

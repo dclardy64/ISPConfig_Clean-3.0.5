@@ -5,13 +5,12 @@
         <meta charset="<tmpl_var name="html_content_encoding">" />
         <title><tmpl_var name="app_title"> <tmpl_var name="app_version"></title>
         <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-        <link href="themes/default/css/styles.css" rel="stylesheet" media="screen" type="text/css" />
-        <link href="themes/default/css/print.css" rel="stylesheet" media="print" type="text/css" />
-        <!--[if IE 9]><link href="themes/default/css/iehacks.css" rel="stylesheet" type="text/css" /><![endif]-->
-        <!--[if lte IE 8]><script type="text/javascript" src="themes/default/js/html5shiv.js"></script><![endif]-->
-        <!--[if lte IE 7]><link href="themes/default/css/iehacks.css" rel="stylesheet" type="text/css" /><![endif]-->
-        <link href="themes/default/css/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
-        <link rel="shortcut icon" href="/themes/default/images/favicon.ico" />
+        <link href="themes/ispc-clean/css/styles.css" rel="stylesheet" media="screen" type="text/css" />
+        <!--[if IE 9]><link href="themes/ispc-clean/css/iehacks.css" rel="stylesheet" type="text/css" /><![endif]-->
+        <!--[if lte IE 8]><script type="text/javascript" src="themes/ispc-clean/js/html5shiv.js"></script><![endif]-->
+        <!--[if lte IE 7]><link href="themes/ispc-clean/css/iehacks.css" rel="stylesheet" type="text/css" /><![endif]-->
+        <link href="themes/ispc-clean/css/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="/themes/ispc-clean/images/favicon.ico" />
         <script type="text/javascript" src="js/jquery-1.6.3.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
         <script type="text/javascript" src="js/scrigo.js.php"></script>
@@ -47,6 +46,28 @@
                 tabChangeWarning = '<tmpl_var name="tabchange_warning_enabled>';
                 tabChangeWarningTxt = '<tmpl_var name="global_tabchange_warning_txt">';
                 tabChangeDiscardTxt = '<tmpl_var name="global_tabchange_discard_txt">';
+				
+				// Store password in browser; works in Firefox, but not Chrome
+				$('#username').live("blur", function(){
+					if($('#dummy_username').val() == '' || $('#dummy_username').val() != $(this).val()){
+						$('#dummy_login').show();
+						$('#dummy_username').attr('value', $(this).val()).trigger('focus').trigger('blur');
+						$('#dummy_login').hide();
+					}
+					if($('#dummy_username').val() == $(this).val() && $(this).val() != ''){
+						$('#passwort').val($('#dummy_passwort').val());
+					} else {
+						$('#passwort').val('');
+					}
+					$('#passwort').focus();
+				});
+				
+				$('#username').live("keyup", function(){
+					$('#dummy_username').val('');
+					$('#dummy_passwort').val('');
+					$('#passwort').val('');
+				});
+				
             });
             
             
@@ -57,8 +78,10 @@
                     jQuery(".panel #Filter").trigger('click');
                 }
                 if(elName == 'select' || elName == 'input' || elName == 'textarea') {
-                    // set marker that something was changed
-                    pageFormChanged = true;
+                    if(jQuery(event.target).hasClass('no-page-form-change') == false) {
+                        // set marker that something was changed
+                        pageFormChanged = true;
+                    }
                 }
             });
             
@@ -104,8 +127,8 @@
         </script>
     </head>
     <body>
-        <div id="page">
-            <!-- begin: header -->
+        <!-- begin: header -->
+        <div class="header-wrap">
             <header>
                 <nav id="topsubnav">
                     <!-- start: skip link navigation -->
@@ -117,15 +140,19 @@
                         <tmpl_if name='usertype' op='==' value='normaluser'><input type="text" id="globalsearch" size="25" value="" /></tmpl_if>
                     </tmpl_if>
                 </nav>
-                <h1 id="ir-HeaderLogo" class="swap" style="background-image:url('{tmpl_var name='app_logo'}');"><span>ISPConfig 3</span></h1>
-                <span>hosting control panel</span>
+                <h1 id="ir-HeaderLogo" class="swap"><span>ISPConfig 3</span></h1>
+                <span class="sub-line">Hosting Control Panel</span>
             </header>
-            <!-- end: header -->
-            <a id="navigation" name="navigation"></a><!-- skiplink anchor: navigation -->
-            <!-- begin: main navigation #nav -->
-            <nav id="topNav">&nbsp;</nav>
-            <!-- end: main navigation -->
+        </div>
+        <!-- end: header -->
 
+        <a id="navigation" name="navigation"></a><!-- skiplink anchor: navigation -->
+        <!-- begin: main navigation #nav -->
+        <nav id="topNav">&nbsp;</nav>
+        <!-- end: main navigation -->
+
+       
+        <div class="page"?
             <!-- begin: main content area #main -->
             <section id="main" name="content">
                 <nav id="sideNav" class="clearfix">&nbsp;</nav>
@@ -140,10 +167,24 @@
                 <!-- end: #content -->
             </section>
             <!-- end: #main -->
-            <!-- begin: footer -->
+        </div>
+
+            
+        <!-- begin: footer -->
+        <div class="footer-wrap">
             <footer>
                 Powered by <a href="<tmpl_var name="app_link">" target="_blank"><tmpl_var name="app_title"></a>
-            </footer><!-- end: footer -->
-        </div>
+            </footer>
+        <div>
+        <!-- end: footer -->        
+		
+<div id="dummy_login" style="display:none;position:absolute;top:-1000px;left:-1000px;">
+<form action="" method="post" target="dummy_login" id="dummy_login_form">
+<input name="username" id="dummy_username" type="text" autocomplete="on" value="" />
+<input name="passwort" id="dummy_passwort" type="password" autocomplete="on" value="" />
+<input type="submit" value="Login" id="dummy_submit"/>
+</form>
+<iframe id="dummy_iframe" src="dummy_login.html" name="dummy_login" style="display:none;"></iframe>
+</div>
     </body>
 </html>
