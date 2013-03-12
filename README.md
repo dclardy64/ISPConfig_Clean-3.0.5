@@ -11,3 +11,5 @@ Installation
 2. Edit /usr/local/ispconfig/web/interface/lib/config.inc.php default theme to ISPConfig_Clean
 3. Edit the header logo location. Change default to ISPConfig_Clean is all that needs to be done.
 4. Enjoy the new theme. I will be making changes as I have time.
+
+If you want the login with the news, you have to make some changes to ISPConfig. I will write up what I did to make this work at a later time.
