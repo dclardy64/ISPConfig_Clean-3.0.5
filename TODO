@@ -1,8 +1,0 @@
-TODO
-- css/print.css is useless in current state
-- css/iehacks.css is useless in current state
-- some more icons need to be changed into sprites
-
-- <html dir="ltr" lang="en-US"> set lang variable with data from the user data or config data
-
-- Lists of servers in monitor module break in IE7 + IE8

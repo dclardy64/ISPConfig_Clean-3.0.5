@@ -1,15 +1,13 @@
 ISPConfig_Clean-3.0.5
 =====================
 
-Clean theme for ISPConfig 3.0.5 and below. 
+Clean theme for ISPConfig 3.0.5 and above. 
 
 
 Installation
 ------------
 
-1. Copy this folder to your /usr/local/ispconfig/web/interface/themes/ISPConfig_Clean
-2. Edit /usr/local/ispconfig/web/interface/lib/config.inc.php default theme to ISPConfig_Clean
-3. Edit the header logo location. Change default to ISPConfig_Clean is all that needs to be done.
+1. Copy this folder to your /usr/local/ispconfig/web/interface/themes/ispc-clean
+2. Edit /usr/local/ispconfig/web/interface/lib/config.inc.php default theme to ispc-clean
+3. Edit the header logo location. Change default to ispc-clean is all that needs to be done.
 4. Enjoy the new theme. I will be making changes as I have time.
-
-If you want the login with the news, you have to make some changes to ISPConfig. I will write up what I did to make this work at a later time.
