@@ -24,7 +24,6 @@ resources @ https://github.com/foe-services/ispc-resources
 - reduction of dom elements
 - reduction of css rules
 - removed all single icons
-    - all icons separate:  https://github.com/downloads/foe-services/ispc-larry/ispc-default_separate.zip
     - all used icons as layers and sprite as .psd: https://github.com/downloads/foe-services/ispc-larry/ispc-default_psd.zip
 - added sprites for (nearly) all used icons where suitable
 - added flags for country text in lists
