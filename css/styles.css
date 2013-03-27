@@ -222,13 +222,18 @@ header span.sub-line {
     background: #cccccc;
 }
 
-#login-form {
+#login-form img#logo {
+    width: 152px;
+    height: 46px;
+}
+
+#login-form, #login-form-reset {
     position: relative;
     width: 580px;
     margin: 20ex auto 2ex auto;
 }
 
-#login-form .box-inner {
+#login-form .box-inner, #login-form-reset .box-inner {
     width: 430px;
     background: white;
     margin: 0 50px;
@@ -454,11 +459,12 @@ div.buttons {
 .page {
     clear: both;
     height: 100%;    
+    width: 100%;
     background: url("../images/shadow-bg.gif") repeat-x 0 bottom #e3e7ed;
 }
 
 #content { 
-    width: 74%;
+    width: 80%;
     padding: 0px 10px 10px 10px;
     border-left: 1px #ddd solid;
     float: left;
@@ -603,6 +609,7 @@ table.list .tbl_col_limit {
     background: #fffaea;
     font-family: Consolas, "Lucida Console", "Courier New", monospace;
     font-size: 0.9em;
+    width: 95%;
 }
 /* Lists */
 table.list {
@@ -634,11 +641,14 @@ table.list td.tbl_col_buttons { word-wrap:normal;white-space:normal;overflow:vis
 /* Systemmonitor */
 .systemmonitor-server,
 .systemmonitor-ve,
+.systemmonitor-content,
 .systemmonitor-state {
-    margin: 10px 5px;
-    font-family: Consolas, "Lucida Console", "Courier New", monospace;
+    margin: 0 auto;
+    font-family: Consolas, "Lucida Console", "Courier New",monospace;
     font-size: 0.9em;
     float: left;
+    width: 98%;
+    overflow: hidden;
 }
 .systemmonitor-server:hover,
 .systemmonitor-vm:hover { background-color: #FFFACD; }
@@ -659,8 +669,6 @@ table.list td.tbl_col_buttons { word-wrap:normal;white-space:normal;overflow:vis
     border: 4px solid #23fb00;
     background-color: #adffa2;
     padding: 5px;
-    width: 100%;
-    overflow: hidden;
 }
 .state-info,
 .state-info-ve {
@@ -731,6 +739,25 @@ div.status {
 
 
 /* Dashboard */
+.panel_dashboard {
+    width: 100%;
+    padding: 15px;
+}
+
+#dashboard-left-col, #dashboard-right-col {
+    float: left;
+    width: 49%;
+}
+
+#dashboard-left-col {
+    margin-right: 10px;
+}
+
+a.news-item {
+    margin-top: 8px;
+    padding-bottom: 5px !important;
+}
+
 .dashboard-modules {
     float:left;
     width:60px;
