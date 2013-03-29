@@ -40,19 +40,9 @@ ul.df-resultbox {
     border: 1px solid #777;
     font-size: 11px;
     background: #fff;
-    -moz-box-shadow: 2px 2px 5px 0 #c5c5c5;
-    -webkit-box-shadow: 2px 2px 5px 0 #c5c5c5;
-    -khtml-box-shadow: 2px 2px 5px 0 #c5c5c5;
-    -o-box-shadow: 2px 2px 5px 0 #c5c5c5;
-    -ms-box-shadow: 2px 2px 5px 0 #c5c5c5;
-    box-shadow: 2px 2px 5px 0 #c5c5c5;
+    @include box-shadow(2px 2px 5px 0 #c5c5c5);
     list-style: none;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    -khtml-border-radius:5px;
-    -o-border-radius:5px;
-    -ms-border-radius:5px;
-    border-radius:5px;
+    @include border-radius(5px);
 }
 ul.df-resultbox li {
     float: left;
@@ -122,20 +112,10 @@ ul.df-resultbox li.df-cdata p span.df-cdata-title {
     color: #000;
 }
 ul.df-resultbox li:first-child {
-    -moz-border-radius:5px 5px 0 0;
-    -webkit-border-radius:5px 5px 0 0;
-    -khtml-border-radius:5px 5px 0 0;
-    -o-border-radius:5px 5px 0 0;
-    -ms-border-radius:5px 5px 0 0;
-    border-radius:5px 5px 0 0;
+    @include border-radius (5px 5px, 0 0);
 }
 ul.df-resultbox li:last-child {
-    -moz-border-radius:0 0 5px 5px;
-    -webkit-border-radius:0 0 5px 5px;
-    -khtml-border-radius:0 0 5px 5px;
-    -o-border-radius:0 0 5px 5px;
-    -ms-border-radius:0 0 5px 5px;
-    border-radius:0 0 5px 5px;
+    @include border-radius (0 0, 5px 5px);
 }
 
 /* Different stuff

@@ -15,9 +15,7 @@
   max-width: 350px;
   padding: 5px 8px 4px 8px;
   text-align: left;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+  @include border-radius (5px);
 }
 
 .tipsy-arrow {

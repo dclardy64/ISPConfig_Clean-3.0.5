@@ -9,6 +9,7 @@
   font-size: 0.9em;
   float: left;
   width: 98%;
+  @include border-radius ( 10px );
   overflow: hidden;
 }
 
@@ -38,6 +39,7 @@
   border: 4px solid #183e99;
   background-color: #d4e2ff;
   padding: 5px;
+  margin-bottom: 10px;
 }
 
 .state-warning, .state-warning-ve {

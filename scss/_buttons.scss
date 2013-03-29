@@ -15,29 +15,20 @@ a.button, .button, .buttons button {
   border: 1px solid #c6c6c6;
   border-radius: 4px;
   background-color: #f7f7f7;
-  box-shadow: 0 1px 1px 0 rgba(140, 140, 140, 0.3);
-  -o-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, 0.3);
-  -webkit-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, 0.3);
-  -moz-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, 0.3);
+  @include box-shadow( 0 1px 1px 0 rgba(140, 140, 140, 0.3));
   text-decoration: none;
 }
 
 a.button:focus, input.button:focus {
   border-color: #4fadd5;
-  box-shadow: 0 0 2px 1px rgba(71, 135, 177, 0.6);
-  -moz-box-shadow: 0 0 2px 1px rgba(71, 135, 177, 0.6);
-  -webkit-box-shadow: 0 0 2px 1px rgba(71, 135, 177, 0.6);
-  -o-box-shadow: 0 0 2px 1px rgba(71, 135, 177, 0.6);
+  @include box-shadow(0 0 2px 1px rgba(71, 135, 177, 0.6));
   outline: none;
 }
 
 .buttons button {
   &:focus {
     border-color: #4fadd5;
-    box-shadow: 0 0 2px 1px rgba(71, 135, 177, 0.6);
-    -moz-box-shadow: 0 0 2px 1px rgba(71, 135, 177, 0.6);
-    -webkit-box-shadow: 0 0 2px 1px rgba(71, 135, 177, 0.6);
-    -o-box-shadow: 0 0 2px 1px rgba(71, 135, 177, 0.6);
+    @include box-shadow(0 0 2px 1px rgba(71, 135, 177, 0.6));
     outline: none;
   }
   &[type] {
@@ -105,9 +96,9 @@ button.positive {
 }
 
 button.positive:hover {
-  background-color: #E6EFC2;
-  border: 1px solid #C6D880;
-  color: #529214;
+    background-color: #E6EFC2;
+    border: 1px solid #C6D880;
+    color: #529214;
 }
 
 .buttons a {
@@ -128,15 +119,15 @@ button.negative {
 }
 
 .buttons a.negative:hover, button.negative:hover {
-  background-color: #fbe3e4;
-  border: 1px solid #fbc2c4;
-  color: #d12f19;
+    background-color: #fbe3e4;
+    border: 1px solid #fbc2c4;
+    color: #d12f19;
 }
 
 .buttons a.negative:active {
-  background-color: #d12f19;
-  border: 1px solid #d12f19;
-  color: #fff;
+    background-color: #d12f19;
+    border: 1px solid #d12f19;
+    color: #fff;
 }
 
 /* Button with icon and text */
