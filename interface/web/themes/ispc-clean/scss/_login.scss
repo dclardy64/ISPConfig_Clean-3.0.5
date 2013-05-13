@@ -134,3 +134,109 @@
     float: right;
   }
 }
+
+/* layout/sidebar
+-------------------------------------------------------------- */
+
+#sidebar {
+    background: url("../images/bg_linen.png") repeat #666;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 280px;
+}
+#sidebar.login-sidebar {
+    top: 0 !important;
+}
+#sidebar ul,
+#sidebar li {
+    list-style: none outside none;
+    &:after {
+      clear: both;
+    }
+}
+.sidebar-container {
+    
+}
+.sidebar-container ul {
+    border-bottom: 1px solid #4A4A54;
+    margin: 0;
+    outline: medium none;
+    padding: 10px;
+    text-decoration: none;
+}
+ul li.sidetitle {
+    background: none repeat scroll 0 0 rgba(255,255,255,0.1);
+    height: 25px;
+    padding: 5px 0;
+    border-bottom: 1px solid #666666 !important;
+}
+ul li.sidetitle .name {    
+    font-size: 13px;
+    width: 100%;
+    color: #fff;
+    cursor: default;
+    display: block;
+}
+ul li.sidetitle .name-inner {   
+    float: right; 
+    margin-right: 25px;
+}
+ul li.sidetitle:after {
+  content: "";
+  clear: both;
+}
+ul li.sideitem {
+    display: block;
+    border-bottom: 1px solid #1D1E21 !important;
+    border-top: 1px solid #4A4A54;
+    color: #FFFFFF;
+    cursor: pointer;
+    left: 0;
+    position: relative;
+    right: 0;
+    text-shadow: 0 1px 1px black;
+    height: 75px;
+}
+ul li.sideitem a {
+    background: none repeat scroll 0 0 transparent;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+ul li.sideitem a:hover {
+    background: none repeat scroll 0 0 rgba(255,255,255,0.05);
+}
+ul li.sideitem .image {
+    border: 1px solid black;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    height: 45px;
+    left: 12px;
+    overflow: hidden;
+    position: absolute;
+    top: 11px;
+    width: 45px;
+}
+ul li.sideitem .name {
+    font-size: 12px;
+    font-weight: bold;
+    left: 70px;
+    position: absolute;
+    top: 18px;
+    width: 152px;
+}
+ul li.sideitem .description {
+    color: #BBBBBB;
+    font-size: 11px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 35px;
+    text-overflow: ellipsis;
+    top: 20px;
+    white-space: nowrap;
+}
