@@ -116,7 +116,7 @@ $form["tabs"]['app'] = array (
 			'formtype'	=> 'SELECT',
 			'default'	=> '',
 			'datasource'	=> array ( 	'type'	=> 'SQL',
-										'querystring' => 'SELECT title FROM tpl_ispc_clean_cat WHERE {AUTHSQL} ORDER BY sorting',
+										'querystring' => 'SELECT title FROM tpl_ispc_clean_cat WHERE {AUTHSQL} AND active = "Y" ORDER BY sorting',
 										'keyfield'=> 'title',
 										'valuefield'=> 'title'
 									 ),
