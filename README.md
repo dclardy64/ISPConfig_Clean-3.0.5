@@ -18,4 +18,14 @@ Recent Changes
 
 I have added a customizable login sidebar to the theme. Please let me know what you think. It is all controlled in the Admin section of ISPConfig, and it is dynamically genertated! It should be helpful for your customers to not have to login to get to important places.
 
-https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=dclardy64%40gmail%2ecom&lc=US&item_name=ISPClean%20Theme%20Donation&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="dclardy64@gmail.com">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="ISPClean Theme Donation">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
