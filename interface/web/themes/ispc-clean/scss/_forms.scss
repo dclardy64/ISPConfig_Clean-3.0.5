@@ -140,9 +140,13 @@ table.list {
     border: 1px solid #d3d3d3 !important;
   }
   tfoot td {
+    color: white;
     text-align: center;
-    background: #f8f8f8 url("../images/lists_tfoot_bg.png") repeat-x bottom left;
-    padding: 24px 8px 8px 8px;
+    background: #f8f8f8 url("../images/menu-bg.gif") repeat;
+    padding: 16px 8px 8px 8px;
+    a {
+      color: black !important;
+    }
   }
   .tbl_paging img {
     vertical-align: top;
