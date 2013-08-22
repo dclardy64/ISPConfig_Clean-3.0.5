@@ -22,6 +22,10 @@ a.news-item {
   padding-bottom: 5px !important;
 }
 
+#dashboard-module {
+  overflow: hidden;
+}
+
 .dashboard-modules {
   float: left;
   width: 60px;
@@ -32,6 +36,7 @@ a.news-item {
   background-position: center 5px;
   background-repeat: no-repeat;
   text-align: center;
+  overflow: hidden;
   a {
     color: black;
     display: block;
@@ -101,5 +106,4 @@ a.news-item {
     content: "";
     clear: both;
   }
-  margin-top: 35px;
 }
