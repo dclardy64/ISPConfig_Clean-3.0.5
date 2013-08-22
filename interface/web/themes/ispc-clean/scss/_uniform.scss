@@ -257,7 +257,7 @@
 ul.ui-autocomplete { max-height: 250px; overflow-y: auto; min-width: 85px;}
 .ui-combobox { position: relative; display: inline-block; margin-right: 17px; }
 .ui-combobox-toggle { position: absolute !important; top: 0; bottom: 0; margin-left: -1px; padding: 1px !important; background: none repeat scroll 0 0 #FFFFFF !important; border: 1px solid #DFDFDF !important;}
-.ui-combobox-input { background: none repeat scroll 0 0 #FFFFFF !important; border: 1px solid #DFDFDF !important; padding: 1px; font-weight: normal !important; }
+.ui-combobox-input { background: none repeat scroll 0 0 #FFFFFF !important; border: 1px solid #DFDFDF !important; padding-left: 2px; font-weight: normal !important; }
 .panel_install_package .ui-combobox { float: left; }
 .clear-float { clear: both; }
 
