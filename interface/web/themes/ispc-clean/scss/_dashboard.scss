@@ -95,3 +95,11 @@ a.news-item {
 .panel_dashboard h2 {
   font-size: 20px;
 }
+
+.quota {
+  &:before {
+    content: "";
+    clear: both;
+  }
+  margin-top: 35px;
+}
