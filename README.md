@@ -8,7 +8,7 @@ Installation
 ------------
 
 1. Copy this folder to your /usr/local/ispconfig/
-2. Edit /usr/local/ispconfig/web/interface/lib/config.inc.php default theme to ispc-clean
+2. Edit /usr/local/ispconfig/interface/lib/config.inc.php default theme to ispc-clean
 3. Edit the header logo location. Change default to ispc-clean is all that needs to be done.
 4. Import the SQL file inside of the SQL folder to setup the table structure in the ISPConfig Database.
 5. Enjoy the theme. I will be making changes as I have time.
