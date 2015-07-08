@@ -37,6 +37,9 @@ class login_index {
 	private $app;
 	private $conf;
 
+	public function __construct() {
+	$this->sidebar_cat = array("Services","News");
+					}
 	public function render() {
 
 		global $app, $conf;
@@ -283,11 +286,13 @@ class login_index {
 		$sidebar_cat = array();
 		$side_data = $app->db->queryAllRecords("SELECT category,title,tpl_ispc_clean_app.desc,image_url,link,target FROM tpl_ispc_clean_app WHERE active = 'Y' order by sorting ");
 		foreach ($side_data as $sd) {
-			if( in_array($sd['category'],$sidebar_cat)) {
+			if (is_array($this->roles)) {
+				if (in_array($sidebar_category, $this->sidebar_cat, true)) {
 				continue;
-			}
-			array_push($sidebar_cat[$sd['category']],$sd['category']);
-		}
+												}
+							}
+				array_push($this->sidebar_cat, "Status", "Other");
+											}
 		foreach ($side_data as $sd2){
 			$sidebar_cat[$sd2['category']][$sd2['title']]=array('app'=> $sd2['title'], 'desc'=> $sd2['desc'], 'image'=> $sd2['image_url'], 'link'=> $sd2['link'], 'target' => $sd2['target']);
 		}
