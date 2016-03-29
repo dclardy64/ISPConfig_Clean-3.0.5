@@ -17,3 +17,6 @@ Recent Changes
 --------------
 
 I have added a customizable login sidebar to the theme. Please let me know what you think. It is all controlled in the Admin section of ISPConfig, and it is dynamically genertated! It should be helpful for your customers to not have to login to get to important places.
+
+
+If anyone would like to take over the maintenance of this project, please contact me so that I can give you access to it. I am no longer using this project, and I feel that it would be better to have someone else still using the project to maintain it.
